@@ -7,6 +7,40 @@
   flex-direction: column;
 }
 
+.light-mode {
+  background: linear-gradient(135deg, #f0f4ff 0%, #e0f7fa 100%);
+  color: #222;
+}
+.dark-mode {
+  background: linear-gradient(135deg, #232946 0%, #16161a 100%);
+  color: #f4f4f4;
+}
+.dark-mode header, .dark-mode footer {
+  background: linear-gradient(90deg, #232946 0%, #393e46 100%);
+  color: #f4f4f4;
+}
+.dark-mode main {
+  background: #232946;
+  color: #f4f4f4;
+}
+.dark-mode .excuse-card {
+  background: #393e46;
+  color: #f4f4f4;
+}
+.dark-mode a {
+  color: #00fff7;
+}
+.dark-mode a:hover {
+  color: #00bcd4;
+}
+.dark-mode button {
+  background: linear-gradient(90deg, #393e46 0%, #232946 100%);
+  color: #f4f4f4;
+}
+.dark-mode button:hover {
+  background: linear-gradient(90deg, #232946 0%, #393e46 100%);
+}
+
 .excuse-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;

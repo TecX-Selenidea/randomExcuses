@@ -12,13 +12,15 @@ import Register from './pages/Register';
 
 function App() {
   const [user, setUser] = useState(null);
+  const [theme, setTheme] = useState('light');
   const handleLogin = username => setUser(username);
   const handleLogout = () => setUser(null);
+  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
 
   return (
     <Router>
-      <div className="flex flex-col min-h-screen bg-gray-100">
-        <Header user={user} onLogout={handleLogout} />
+      <div className={`flex flex-col min-h-screen bg-gray-100 ${theme}-mode`}>
+        <Header user={user} onLogout={handleLogout} theme={theme} toggleTheme={toggleTheme} />
         <div className="flex-grow">
           <Routes>
             <Route path="/login" element={<Login onLogin={handleLogin} />} />
@@ -34,5 +36,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
