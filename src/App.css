@@ -1,38 +1,107 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e0f7fa 100%);
+  color: #222;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   display: flex;
   flex-direction: column;
+}
+
+.excuse-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  z-index: 1000;
+}
+.excuse-card {
+  background: #fff;
+  color: #222;
+  padding: 2rem 2.5rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(49,130,206,0.18);
+  min-width: 320px;
+  max-width: 90vw;
+  text-align: center;
+  position: relative;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.excuse-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: #3182ce;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.excuse-close:hover {
+  color: #00bcd4;
+}
+.excuse-text {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+@keyframes pop {
+  0% { transform: scale(0.7); opacity: 0; }
+  80% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-pop {
+  animation: pop 0.35s cubic-bezier(.68,-0.55,.27,1.55);
 }
 
-.App-link {
-  color: #61dafb;
+header, footer {
+  background: linear-gradient(90deg, #3182ce 0%, #00bcd4 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 1rem 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+a {
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #3182ce;
+}
+
+button {
+  background: linear-gradient(90deg, #3182ce 0%, #00bcd4 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(49,130,206,0.10);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #00bcd4 0%, #3182ce 100%);
+  box-shadow: 0 2px 8px rgba(49,130,206,0.15);
 }
